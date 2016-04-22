@@ -37,6 +37,11 @@ var HTMLworkTitle = ' - %data%</a>';
 var HTMLworkDates = '<div class="date-text">%data%</div>';
 var HTMLworkLocation = '<div class="location-text">%data%</div>';
 var HTMLworkDescription = '<p><br>%data%</p>';
+// my imputs below
+
+var HTMLworkResponsibilitesList = '<ul class="responsibilites">Responsibilites</ul>';
+var HTMLworkResponsibilitesItem = '<li">%data%</li>'
+
 
 var HTMLprojectStart = '<div class="project-entry"></div>';
 var HTMLprojectTitle = '<a href="#">%data%</a>';
@@ -84,11 +89,14 @@ function logClicks(x,y) {
       y: y
     }
   );
-  console.log('x location: ' + x + '; y location: ' + y);
 }
 
 $(document).click(function(loc) {
-  // your code goes here!
+  console.log(event.pageX);
+
+  logClicks(loc.pageX, loc.pageY);
+
+
 });
 
 
@@ -146,6 +154,7 @@ function initializeMap() {
     work.jobs.forEach(function(job){
       locations.push(job.location);
     });
+
 
     return locations;
   }
@@ -241,11 +250,11 @@ Uncomment the code below when you're ready to implement a Google Map!
 */
 
 // Calls the initializeMap() function when the page loads
-//window.addEventListener('load', initializeMap);
+window.addEventListener('load', initializeMap);
 
 // Vanilla JS way to listen for resizing of the window
 // and adjust map bounds
-//window.addEventListener('resize', function(e) {
+window.addEventListener('resize', function(e) {
   //Make sure the map bounds get updated on page resize
-//  map.fitBounds(mapBounds);
-//});
+  map.fitBounds(mapBounds);
+});
