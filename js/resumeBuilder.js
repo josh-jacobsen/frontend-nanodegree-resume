@@ -169,7 +169,6 @@ education.display = function() {
   $(".education-entry:last").append(formattedSchoolLocation);
   $(".education-entry:last").append(formattedSchoolMajor);
 
-
  }
  if (education["online courses"].length > 0){
   $(".education-entry:last").append(HTMLonlineClasses);
